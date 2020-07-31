@@ -20,6 +20,6 @@ describe('sample mock test', () => {
     });
 
     const title = await getFirstAlbumTitle();
-    expect(title).toBe('My First Album');
+    expect(title).toBe('My Initial Album');
   });
 });

@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 var createError = require('http-errors')
-const MAX = 10;
+const MAX = 100000;
 
 function lengthCheck (req, res, next) {
   console.log("length check");	
@@ -20,10 +20,12 @@ app.use(lengthCheck);
 app.use(bodyParser.json({limit: MAX}));
 
 app.get('/ping', function(req, res) {
+  console.log("get ping");
 	return res.status(200).send({message: 'ok'});
 })
 
 app.post('/test', function(req, res) {
+  console.log("post ping");
 	return res.status(200).send({message: 'ok'});
 })
 

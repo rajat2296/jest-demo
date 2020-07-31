@@ -10,5 +10,4 @@ deploy:
 - provider: gae
   keyfile: secret.json
   project: dark-bindery-284807
-  on:
-    tags: true  
+  on: master 
