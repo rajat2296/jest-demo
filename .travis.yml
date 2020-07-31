@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- 12.13.1
+before_script:
+- npm test
+before_install:
+- openssl aes-256-cbc -K $encrypted_6330fb5ca1fb_key -iv $encrypted_6330fb5ca1fb_iv
+  -in secret.json.enc -out secret.json -d
+deploy:
+- provider: gae
+  keyfile: secret.json
+  project: dark-bindery-284807
+  on:
+    tags: true  
